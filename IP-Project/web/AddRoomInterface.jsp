@@ -20,6 +20,14 @@
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
+        <% String message = (String)session.getAttribute("alertMsg");%>
+
+        <% if(!message.equals("no")){ %>
+            <script type="text/javascript">
+            var msg = "<%=message%>";
+            alert(msg);
+        </script>
+        <%}%>
         
         <form  name="AddRoomform" method="post" action="ManageRoomController" enctype="multipart/form-data">
             

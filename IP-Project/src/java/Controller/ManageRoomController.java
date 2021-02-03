@@ -65,7 +65,7 @@ public class ManageRoomController extends HttpServlet {
                     Part part = request.getPart("roomImage");
                     InputStream roomImage = part.getInputStream();
                     room.createRoom(roomNo,roomType,roomImage,roomPrice,request,response);
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                    request.getRequestDispatcher("AddRoomInterface.jsp").forward(request, response);
                     break;
                     
                 default :
