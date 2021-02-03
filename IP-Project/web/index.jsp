@@ -148,10 +148,10 @@
                                                             <input type="date" class="form-control" id="date_out" name="traveldateOut" min="<%=formattedDate%>">
                                                         </td>
                                                         <td>
-                                                            <input type="number" class="form-control" id="guest_adult" name="guest" min="1" max="5" value="2">
+                                                            <input type="number" class="form-control" id="guest_adult" name="guest_adult" min="1" max="5" value="2">
                                                         </td>
                                                         <td>
-                                                            <input type="number" class="form-control" id="guest_child" name="guest" min="0" max="5" value="0">
+                                                            <input type="number" class="form-control" id="guest_child" name="guest_child" min="0" max="5" value="0">
                                                         </td>
                                                         <td>
                                                             <input type="submit" name="command" id="Search For Rooms" value="Search For Rooms">
@@ -173,6 +173,51 @@
         </div>
 
       </main>
+    
+       <%--untuk admin--%>                                                    
+      <form action="${pageContext.request.contextPath}/ManageRoomController" method="post">
+        <div class="container pb-5">
+            <div class="row align-items-start justify-content-center"><h1>Manage Room</h1></div>
+            <div class="row align-items-center pt-4">
+                <div class="col">
+                    <div class="card p-3 mb-2 bg-light text-dark" style="width: 18rem;">
+                        <img src="image/cover.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Add New Room</h5>
+                            <p class="card-text">Add and create new upcoming event.</p>
+                            <input type="submit" class="btn btn-outline-primary btn-lg" name="command" value="Add Room Form" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card p-3 mb-2 bg-light text-dark" style="width: 18rem;">
+                        <img src="image/cover.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Deleting Room</h5>
+                            <p class="card-text">Delete and remove any room.</p>
+                            <input type="submit" class="btn btn-outline-danger btn-lg" name="command" value="Delete Room" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card p-3 mb-2 bg-light text-dark" style="width: 18rem;">
+                        <img src="image/cover.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Updating Room</h5>
+                            <p class="card-text">Update or modify any room.</p>
+                            <input type="submit" class="btn btn-outline-success btn-lg" name="command" value="Update Room" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-end">
+                <div class="d-grid gap-2 col-2 mx-auto pt-2">
+                    <a class="btn btn-success btn-lg" href="MainStaffInterface.jsp" role="button">Main Menu</a>                                           
+                </div>
+            </div>
+        </div>
+    </form>                                                  
+                                                        
 
       <footer class="container">
        

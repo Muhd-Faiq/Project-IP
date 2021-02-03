@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2021 at 12:42 PM
+-- Generation Time: Feb 03, 2021 at 03:17 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -59,7 +59,9 @@ CREATE TABLE `client` (
 CREATE TABLE `room` (
   `roomID` int(11) NOT NULL,
   `roomNo` varchar(100) NOT NULL,
-  `roomType` varchar(100) NOT NULL
+  `roomType` varchar(100) NOT NULL,
+  `roomImage` mediumblob NOT NULL,
+  `roomPrice` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
