@@ -1,3 +1,13 @@
+
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
+<%@ page import="java.util.*" %>
+ <%@ page import="java.io.*,java.util.*, javax.servlet.*" %>
+<%@page import="Model.*"%>
+<%@page import="Controller.*"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page language="java" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
    <head>
@@ -102,6 +112,12 @@
          
          <main role="main" class="container">       
 
+             
+        <%  
+            Date date = new Date();
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            String formattedDate = df.format(new Date());
+        %>
          <div class="row">
              
              <div class="col-md-12">
@@ -109,7 +125,7 @@
                      <div class="card shadow">
                          <div class="text-center">
                             <div class="card-body">     
-                                <form class="d-flex" action="#" method="post">  
+                                <form class="d-flex" action="${pageContext.request.contextPath}/ManageBookingController" method="post">  
                                     
                                             <div class="offset-md-2">
                                             <table>
@@ -126,10 +142,10 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <input type="date" class="form-control" id="date_in" name="traveldate">
+                                                            <input type="date" class="form-control" id="date_in" name="traveldateIn" min="<%=formattedDate%>" >
                                                         </td>
                                                         <td>
-                                                            <input type="date" class="form-control" id="date_out" name="traveldate">
+                                                            <input type="date" class="form-control" id="date_out" name="traveldateOut" min="<%=formattedDate%>">
                                                         </td>
                                                         <td>
                                                             <input type="number" class="form-control" id="guest_adult" name="guest" min="1" max="5" value="2">
@@ -138,7 +154,7 @@
                                                             <input type="number" class="form-control" id="guest_child" name="guest" min="0" max="5" value="0">
                                                         </td>
                                                         <td>
-                                                            <button type="submit" class="btn btn-primary">Search For Rooms</button> 
+                                                            <input type="submit" name="command" id="Search For Rooms" value="Search For Rooms">
                                                         </td>
                                                     </tr>
                                                  </table> 
